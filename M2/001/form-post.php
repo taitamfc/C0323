@@ -14,6 +14,7 @@
     print_r($_SERVER['REQUEST_METHOD']);
     echo '</pre>';
 
+    // Kiểm tra người dùng đã gửi dữ liệu lên hay chưa
     if( $_SERVER['REQUEST_METHOD'] == 'POST' ){
         $username = $_REQUEST['username'];
         $password = $_REQUEST['password'];
