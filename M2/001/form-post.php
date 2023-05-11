@@ -11,17 +11,21 @@
 
    
     echo '<pre>';
-    print_r($_REQUEST);
+    print_r($_SERVER['REQUEST_METHOD']);
     echo '</pre>';
 
-    $username = $_REQUEST['username'];
-    $password = $_REQUEST['password'];
-
-    if( $username == 'admin' && $password == '12345' ){
-        echo 'Xin chao admin';
-    }else{
-        echo 'Sai thong tin dang nhap';
+    if( $_SERVER['REQUEST_METHOD'] == 'POST' ){
+        $username = $_REQUEST['username'];
+        $password = $_REQUEST['password'];
+    
+        if( $username == 'admin' && $password == '12345' ){
+            echo 'Xin chao admin';
+        }else{
+            echo 'Sai thong tin dang nhap';
+        }
     }
+
+    
     
 ?>
 <form action="" method="POST">
