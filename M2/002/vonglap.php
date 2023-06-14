@@ -2,11 +2,13 @@
 $books = ['Van','Su','DIa'];
 ?>
 
+<?php if( count($errors) ):?>
 <ul>
-    <?php foreach( $books as $book ): ?>
-        <li> <?= $book; ?> </li>
+    <?php foreach( $errors as $error ): ?>
+        <li> <?= $error; ?> </li>
     <?php endforeach; ?>
 </ul>
+<?php endif; ?>
 
 <ul>
     <?php for( $i = 0; $i < count($books); $i ++ ): ?>

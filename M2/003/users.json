@@ -1,14 +1,1 @@
-[
-    {
-        "name": "Nguyen Van A",
-        "age": 18
-    },
-    {
-        "name": "Nguyen Van A",
-        "age": 18
-    },
-    {
-        "name": "NVB",
-        "age": 19
-    }
-]
+[{"name":"Nguyen Van A","age":18},{"name":"Nguyen Van A","age":18},{"name":"NVB","age":19},{"name":"NVB","age":19},{"name":"NVB","age":19}]
