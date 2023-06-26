@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+        Muc dich cua ham => ten ham
+        Dau cua vao cua ham => tham so
+        Ham tra ve => return
+        Ham ko tra ve => xu ly
+        */
+        function giaithua( so ){
+            let tich = 1;
+            for( let i = 1; i <= so; i++ ){
+                tich = tich * i //=> tich *= i
+            }
+            console.log(tich);
+        }
+        giaithua(5);
+
+        function timSoNhoNhat( a,b,c ){
+            var min = null;
+
+            if( a < b && a < c ){
+                min = a;
+            }else if( b < a && b < c ){
+                min = b;
+            }else if( c < a && c < b ){
+                min = c;
+            }
+
+            return min;
+        }
+
+        console.log( timSoNhoNhat( 1,2,3 ) );
+
+
+    </script>
+</body>
+</html>
