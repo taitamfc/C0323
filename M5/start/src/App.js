@@ -10,8 +10,8 @@ function App() {
       <Routes>
         <Route path="/" element={<ProductIndex />} />
         <Route path="/create" element={<ProductCreate />} />
-        <Route path="/edit" element={<ProductEdit />} />
-        <Route path="/show" element={<ProductShow />} />
+        <Route path="/edit/:id" element={<ProductEdit />} />
+        <Route path="/show/:id" element={<ProductShow />} />
       </Routes>
     </BrowserRouter>
   );
