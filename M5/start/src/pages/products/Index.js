@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import Product from '../../models/Product';
+import axios from 'axios';
 
 function Index(props) {
 
@@ -7,22 +9,41 @@ function Index(props) {
     const [products,setProducts] = useState([]);
 
     useEffect( () => {
-        // Lấy từ localStorage
-        let productData = localStorage.getItem('products');
-        if(!productData){
-            productData = []
-        }else{
-            productData = JSON.parse(productData);
-        }
-        setProducts(productData);
+        getAll();
     },[] );
 
-    const handleDelete = (id) => {
-        let new_products = [...products];
-        new_products.splice(id,1)
-        setProducts(new_products);
+    const getAll = () => {
+        // const data = Product.getAll();
+        // console.log(data);
 
-        localStorage.setItem('products',JSON.stringify(new_products))
+        Product.all().then((res) => {
+            console.log("Data:", res.data);
+            setProducts(res.data);
+        })
+        .catch((error) => {
+            console.log("Error:", error);
+        })
+
+        // axios.get('https://6083df209b2bed00170404a0.mockapi.io/angular/products').then((res) => {
+        //     // console.log("Data:", res.data);
+        //     setProducts(res.data);
+        // })
+        // .catch((error) => {
+        //     // console.log("Error:", error);
+        // })
+    }
+
+    const handleDelete = (id) => {
+        Product.destroy(id).then((res) => {
+            console.log("Data:", res.data);
+            alert('Xoa thanh cong')
+
+            // getAll();
+        })
+        .catch((error) => {
+            console.log("Error:", error);
+            alert('Xoa that bai')
+        })
     }
 
     return (
@@ -45,13 +66,13 @@ function Index(props) {
                 {
                     products.map( (product,index) => (
                         <tr key={index}>
-                            <td>{index + 1}</td>
+                            <td>{product.id}</td>
                             <td>{product.name}</td>
                             <td>{product.price}</td>
                             <td>
-                                <Link to={'/show/' + index}>Show</Link> | 
-                                <Link to={'/edit/' + index}>Edit</Link> |
-                                <button onClick={ () => handleDelete(index) }>Delete</button>
+                                <Link to={'/show/' + product.id}>Show</Link> | 
+                                <Link to={'/edit/' + product.id}>Edit</Link> |
+                                <button onClick={ () => handleDelete(product.id) }>Delete</button>
                             </td>
                         </tr>
                     ))

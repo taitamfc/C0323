@@ -1,0 +1,24 @@
+<script>
+    // function callApi(){
+    //     return new Promise((resolve, reject) => {
+    //         if(false){
+    //             resolve('Data tra ve')
+    //         }else{
+    //             reject('Co loi xay ra')
+    //         }
+    //     })
+    // }
+
+    async function callApi(){
+        const respon = await 'Data tra ve'
+        return respon;
+    }
+
+    callApi()
+    .then((res) => {
+        console.log("Data:", res);
+    })
+    .catch((error) => {
+        console.log("Error:", error);
+    })
+</script>
