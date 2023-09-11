@@ -19,6 +19,10 @@ const rootReducer = (state = initialState, action) => {
     switch (action.type) {
         case DEPOSIT:
             return { ...state,deposit_amount:action.payload  }
+
+            state.deposit_amount = action.payload;
+            return state;
+
             break;
         case WITHDRAW:
             return { ...state,deposit_amount:action.payload  }
