@@ -3,6 +3,9 @@ import React, { useState } from "react";
 const getSum = (value1, value2) => {
   return value1 + value2;
 };
+const getTru = (value1, value2) => {
+    return value1 - value2;
+};
 
 const Calculator = () => {
   const [valueOne, setValueOne] = useState("");
@@ -45,5 +48,5 @@ const Calculator = () => {
   );
 };
 
-export { getSum };
+export { getSum,getTru };
 export default Calculator;
