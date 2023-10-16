@@ -26,7 +26,7 @@ describe('Kiem tra component', () => {
 
     // Gan 1 vao o input 1
     fireEvent.change(input_1, {
-      target: { value: 1 },
+      target: { value: 2 },
     });
 
     // Gan 2 vao o input 2
@@ -38,7 +38,7 @@ describe('Kiem tra component', () => {
     fireEvent.click(button);
 
     // So sanh gia tri text voi gia tri mong doi
-    let expected = 'Result: 3';
+    let expected = 'Result: 4';
     let output = result.textContent
 
     expect(expected).toBe(output);

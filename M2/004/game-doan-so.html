@@ -11,7 +11,8 @@
     document.getElementById('so').innerHTML = 'So do co phai la ' + numbers[M] + '?';
 
     function yes(){
-
+		alert('Thanks !')
+		windown.location.reload();
     }
     function lon_hon(){
         R = M - 1;
@@ -28,11 +29,3 @@
 <button onclick="yes()"> Dung </button>
 <button onclick="lon_hon()"> Lon hon </button>
 <button onclick="nho_hon()"> Nho hon </button>
-
-<style>
-    .menu { }
-    .menu__items { }
-    .menu__item { }
-    .menu__anchor { }
-    .menu__anchor--button { }
-</style>

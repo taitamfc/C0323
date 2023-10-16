@@ -29,13 +29,13 @@
             <div class="mb-3">
                 <label class="form-label">Favorites <a href="javascript:;" id="checkAll">Checkall</a> </label>
                 <div class="form-check">
-                    <input class="form-check-input favorites" type="checkbox" >
+                    <input class="form-check-input favorites" type="checkbox" value="football" >
                     <label class="form-check-label">
                         Playing football
                     </label>
                 </div>
                 <div class="form-check">
-                    <input class="form-check-input favorites" type="checkbox">
+                    <input class="form-check-input favorites" type="checkbox" value="beer">
                     <label class="form-check-label">
                         Dirking beer
                     </label>
@@ -120,7 +120,7 @@
                     $('.f-error-favorites').html('Please choice at last 1 favorite')
                 }
 
-                if(username != '' && password != ''){
+                if(username != '' && password != '' && favorites.length > 0){
                     
                 }
             })

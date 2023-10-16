@@ -30,9 +30,7 @@ OrderController
 
 */
 
-echo '<pre>';
-print_r($_REQUEST);
-echo '</pre>';
+
 $controller = isset($_REQUEST['controller']) ? $_REQUEST['controller'] : 'user';
 $action = isset($_REQUEST['action']) ? $_REQUEST['action'] : 'index';
 
@@ -81,7 +79,3 @@ switch ($action) {
         # code...
         break;
 }
-
-echo '<pre>';
-print_r($objController);
-echo '</pre>';

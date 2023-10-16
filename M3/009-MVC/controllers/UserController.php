@@ -20,15 +20,21 @@
         // Xu ly them moi
         public function store(){
             $data = [
-                'key' => $_REQUEST['value']
+                'name' => $_REQUEST['name'],
+                'email' => $_REQUEST['email'],
             ];
             User::save($data);
 
             // Chuyen huong ve danh sach
+            header("Location: index.php?controller=user&action=index");
+            die();
         }
 
         // Hien thi form sua
         public function edit(){
+            $id = $_REQUEST['id'];
+            $item = User::find( $id );
+
             include_once 'views/users/edit.php';
         }
 
@@ -36,11 +42,14 @@
         public function update(){
             $id = $_REQUEST['id'];
             $data = [
-                'key' => $_REQUEST['value']
+                'name' => $_REQUEST['name'],
+                'email' => $_REQUEST['email'],
             ];
             User::update($id,$data);
 
             // Chuyen huong ve danh sach
+            header("Location: index.php?controller=user&action=index");
+            die();
         }
 
         public function destroy(){
@@ -48,5 +57,7 @@
             User::delete($id);
 
             // Chuyen huong ve danh sach
+            header("Location: index.php?controller=user&action=index");
+            die();
         }
     }

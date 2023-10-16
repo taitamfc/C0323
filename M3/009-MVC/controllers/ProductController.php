@@ -3,6 +3,7 @@
 class ProductController{
     public function index(){
         $items = Product::all();
+        // dd($items);
         include_once 'views/products/index.php';
     }
     public function show(){
@@ -14,30 +15,41 @@ class ProductController{
         include_once 'views/products/create.php';
     }
     public function store(){
+        // dd($_REQUEST);
         $data = [
-            'key' => $_REQUEST['value']
+            'name' => $_REQUEST['name'],
+            'price' => $_REQUEST['price']
         ];
         Product::save($data);
-
+        header("Location: index.php?controller=product&action=index");
+            die();
         // Chuyen huong ve danh sach
     }
     public function edit(){
+        $id = $_REQUEST['id'];
+        $item = Product::find( $id );
+        // dd($item);
         include_once 'views/products/edit.php';
     }
     public function update(){
         $id = $_REQUEST['id'];
         $data = [
-            'key' => $_REQUEST['value']
+            'name' => $_REQUEST['name'],
+            'price' => $_REQUEST['price'],
         ];
         Product::update($id,$data);
 
+        // Chuyen huong ve danh sach
+        header("Location: index.php?controller=product&action=index");
+        die();
         // Chuyen huong ve danh sach
     }
     
     public function destroy(){
         $id = $_REQUEST['id'];
         Product::delete($id);
-
+        header("Location: index.php?controller=product&action=index");
+        die();
         // Chuyen huong ve danh sach
     }
 }

@@ -23,3 +23,15 @@
     clear: both;
     display: table;
 }
+
+@media screen and (max-width:768px) {
+    .col-3 {
+        width: 50%;
+    }
+}
+
+@media screen and (max-width:480px) {
+    .col-3 {
+        width: 100%;
+    }
+}

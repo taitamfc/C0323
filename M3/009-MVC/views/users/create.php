@@ -1,7 +1,27 @@
-<form action="" method="post">
-    TENHANG :<input type="text" name="TENHANG"> <br>
-    MACONGTY: <input type="text" name="MACONGTY"> <br>
-    MALOAIHANG: <input type="text" name="MALOAIHANG"> <br>
-    GIAHANG: <input type="text" name="GIAHANG"> <br>
-    <input type="submit" value="Them">
+<?php
+// pr($item);
+?>
+<form action="index.php?controller=user&action=store" method="post">
+    <table border="1">
+        <tbody>
+            <tr>
+                <td>Name</td>
+                <td>
+                    <input type="text" name="name" value="">
+                </td>
+            </tr>
+            <tr>
+                <td>Email</td>
+                <td>
+                    <input type="text" name="email" value="">
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <input type="submit" value="Save">
+                </td>
+            </tr>
+        </tbody>
+    </table>
 </form>

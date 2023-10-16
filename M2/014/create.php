@@ -2,6 +2,7 @@
     include_once 'db.php';
     
     if ( $_SERVER['REQUEST_METHOD']=="POST" ){
+        // Controller
         // 1. In ra du lieu
         // echo '<pre>';
         // print_r ($_REQUEST);
@@ -13,6 +14,7 @@
         $MALOAIHANG = $_REQUEST['MALOAIHANG'];
         $GIAHANG    = $_REQUEST['GIAHANG'];
 
+        // Model
         // 3. Viet cau SQL
         $sql = " INSERT INTO c10_mat_hang 
         ( TENHANG, MACONGTY, MALOAIHANG , GIAHANG ) 
@@ -31,6 +33,7 @@
     }
 ?>
 
+<!-- VIEW -->
 <form action="" method="post">
     TENHANG :<input type="text" name="TENHANG"> <br>
     MACONGTY: <input type="text" name="MACONGTY"> <br>
